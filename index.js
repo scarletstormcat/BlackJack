@@ -27,6 +27,7 @@ function login() {
     player.name = inputValue
     
     gameContEl.hidden = false
+    newCardBtnEl.hidden = true
     loginEl.hidden = true
     playerEl.textContent = player.name + ": $" + player.chips
    

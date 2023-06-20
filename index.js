@@ -16,6 +16,7 @@ let playerEl = document.getElementById("player-el")
 let gameContEl = document.getElementById("main-game")
 let loginEl = document.getElementById("login")
 let loginTextEl = document.getElementById("login-text-el")
+let newCardBtnEl = document.getElementById("new-card-btn-el")
 
 gameContEl.hidden = true
 
@@ -74,6 +75,8 @@ function renderGame() {
     } else {
         message = "You're out of the game!"
         isAlive = false
+        newCardBtnEl.hidden = true
+
     }
     messageEl.textContent = message
 }

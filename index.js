@@ -58,7 +58,7 @@ function startGame() {
     cards = [firstCard, secondCard]
     sum = firstCard + secondCard
     startBtnEl.textContent = "START GAME"
-    gameContEl.hidden = false
+    newCardBtnEl.hidden = false
     renderGame()
 }
 

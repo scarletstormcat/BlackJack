@@ -17,6 +17,7 @@ let gameContEl = document.getElementById("main-game")
 let loginEl = document.getElementById("login")
 let loginTextEl = document.getElementById("login-text-el")
 let newCardBtnEl = document.getElementById("new-card-btn-el")
+let startBtnEl = document.getElementById("start-btn-el")
 
 gameContEl.hidden = true
 
@@ -56,6 +57,7 @@ function startGame() {
     let secondCard = getRandomCard()
     cards = [firstCard, secondCard]
     sum = firstCard + secondCard
+    startBtnEl.textContent = "START GAME"
     renderGame()
 }
 
@@ -72,13 +74,20 @@ function renderGame() {
         message = "You've got Blackjack!"
         hasBlackJack = true
         updateScore(50)
+        gameOver()
     } else {
         message = "You're out of the game!"
-        isAlive = false
-        newCardBtnEl.hidden = true
+        gameOver()
+        
 
     }
     messageEl.textContent = message
+}
+
+function gameOver() {
+    isAlive = false
+    newCardBtnEl.hidden = true
+    startBtnEl.textContent = "TRY AGAIN"
 }
 
 
